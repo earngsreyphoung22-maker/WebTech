@@ -48,10 +48,10 @@ ChatSystem/
 
 Both containers are kept alive with `sleep infinity` so you can shell into them and run commands manually. The `laravel-app/` and `vuejs-app/` folders on your host are mounted as volumes, so any files you create inside the container are immediately visible on your host (and vice versa).
 
-| Container | Image | Volume mount |
-|---|---|---|
+| Container           | Image                        | Volume mount                      |
+| ------------------- | ---------------------------- | --------------------------------- |
 | `laravel-container` | `php:8.4-cli` + Composer 2.9 | `./laravel-app` → `/var/www/html` |
-| `vuejs-container` | `node:24.12.0-alpine` | `./vuejs-app` → `/app` |
+| `vuejs-container`   | `node:24.12.0-alpine`        | `./vuejs-app` → `/app`            |
 
 ---
 
@@ -153,30 +153,30 @@ Access at: **http://localhost:5173**
 
 ## Common Docker Commands
 
-| Action | Command |
-|---|---|
-| Build and start all containers | `docker compose up --build` |
-| Start in background (detached) | `docker compose up -d` |
-| Stop all containers | `docker compose down` |
-| Stop and remove volumes | `docker compose down -v` |
-| View running containers | `docker compose ps` |
-| View container logs | `docker compose logs` |
-| Follow logs live | `docker compose logs -f` |
-| Follow logs for one service | `docker compose logs -f laravel-service` |
-| Shell into Laravel container | `docker compose exec laravel-service bash` |
-| Shell into Vue.js container | `docker compose exec vuejs-service sh` |
-| Rebuild a single service | `docker compose build laravel-service` |
-| Restart a single service | `docker compose restart laravel-service` |
-| Remove stopped containers | `docker compose rm` |
+| Action                         | Command                                    |
+| ------------------------------ | ------------------------------------------ |
+| Build and start all containers | `docker compose up --build`                |
+| Start in background (detached) | `docker compose up -d`                     |
+| Stop all containers            | `docker compose down`                      |
+| Stop and remove volumes        | `docker compose down -v`                   |
+| View running containers        | `docker compose ps`                        |
+| View container logs            | `docker compose logs`                      |
+| Follow logs live               | `docker compose logs -f`                   |
+| Follow logs for one service    | `docker compose logs -f laravel-service`   |
+| Shell into Laravel container   | `docker compose exec laravel-service bash` |
+| Shell into Vue.js container    | `docker compose exec vuejs-service sh`     |
+| Rebuild a single service       | `docker compose build laravel-service`     |
+| Restart a single service       | `docker compose restart laravel-service`   |
+| Remove stopped containers      | `docker compose rm`                        |
 
 ---
 
 ## Ports
 
-| Service | Container port | Host port | URL |
-|---|---|---|---|
-| Laravel | 8000 | 8000 | http://localhost:8000 |
-| Vue.js | 5173 | 5173 | http://localhost:5173 |
+| Service | Container port | Host port | URL                   |
+| ------- | -------------- | --------- | --------------------- |
+| Laravel | 8000           | 8000      | http://localhost:8000 |
+| Vue.js  | 5173           | 5173      | http://localhost:5173 |
 
 ---
 
@@ -184,11 +184,11 @@ Access at: **http://localhost:5173**
 
 This project is configured to work consistently across Windows, macOS, and Linux:
 
-| Config file | Purpose |
-|---|---|
-| `.gitattributes` | Forces `*.sh` files to always use LF line endings; enforces case sensitivity |
-| `.gitignore` | Excludes OS files (`.DS_Store`, `Thumbs.db`) and editor folders |
-| `.editorconfig` | Enforces UTF-8, LF, consistent indent style across all editors |
+| Config file               | Purpose                                                                      |
+| ------------------------- | ---------------------------------------------------------------------------- |
+| `.gitattributes`          | Forces `*.sh` files to always use LF line endings; enforces case sensitivity |
+| `.gitignore`              | Excludes OS files (`.DS_Store`, `Thumbs.db`) and editor folders              |
+| `.editorconfig`           | Enforces UTF-8, LF, consistent indent style across all editors               |
 | `Dockerfile.dockerignore` | Excludes `node_modules`, `vendor` etc. from Docker build context per service |
 
 > **Windows users:** Install the [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) extension to apply `.editorconfig` automatically.
