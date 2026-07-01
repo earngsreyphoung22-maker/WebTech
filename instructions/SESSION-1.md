@@ -179,7 +179,7 @@ Access at: **http://localhost:5173**
 | Vue.js  | 5173           | 5173      | http://localhost:5173 |
 
 ---
-
+ v
 ## Cross-OS Compatibility
 
 This project is configured to work consistently across Windows, macOS, and Linux:
